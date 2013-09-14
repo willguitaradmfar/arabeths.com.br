@@ -1,0 +1,26 @@
+{
+  "name": "postit",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=8083 env=development node app.js"
+  },
+  "dependencies": {
+    "express"          : "3.2.6",
+    "nodemon"          : "*",
+    "jade"             : "0.32.0",
+    "stylus"           : "0.33.1",
+    "mongoose"         : "3.6.14",
+    "socket.io"        : "0.9.16",
+    "passport"         : "0.1.17",
+    "passport-twitter" : "0.1.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint"   : "0.6.0",
+    "grunt-contrib-uglify"   : "0.2.2",
+    "grunt-contrib-imagemin" : "0.1.4",
+    "grunt-contrib-copy"     : "0.4.1",
+    "grunt-contrib-concat"   : "0.3.0",
+    "grunt-contrib-watch"    : "0.4.4"
+  }
+}
