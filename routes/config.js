@@ -8,7 +8,7 @@ var config = {
         credentials: '', // username:password@
         host: 'localhost',
         port: ':27017', // :port
-        dbName: 'blogio'
+        dbName: 'arabeths'
     },
     twitter: {
         consumerKey: process.env.consumerKey,
