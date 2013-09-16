@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "scripts": {
-    "start": "PORT=8083 env=development node app.js"
+    "start": "PORT=8083 env=development nodemon app.js"
   },
   "dependencies": {
     "express"          : "3.2.6",

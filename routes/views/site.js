@@ -2,7 +2,7 @@ module.exports = function(app, config, passport) {
     app.get(config.public.url.site, function(req, res) {
         console.log(req.user);
 
-        res.render('site/index', {
+        res.render('site/index1', {
             title: 'Demo site',
             env: config.env,
             session: req.user
