@@ -912,10 +912,11 @@ ul.art-hmenu ul
 {
   margin: 0 auto;
   position: relative;
-  height: 400px;
+  height: 370px;
   background-image: url('../images/header.png');
   background-position: center top;
   background-repeat: no-repeat;
+  margin-top: -80px;
 }
 
 .responsive .art-header
