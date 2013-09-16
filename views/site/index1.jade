@@ -34,19 +34,19 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
       window["_GOOG_TRANS_EXT_VER"] = "1";
   body
     #art-main
-      nav.art-nav.clearfix.desktop-nav
+      nav.art-nav.clearfix.desktop-nav(ng-controller='MenuControle')
         .art-nav-inner
           ul.art-hmenu
             li#current.active.item28
-              a.active(href='http://www.arabeths.com.br/media/system/js/Arabeths.html') HOME
+              a.active(href='#/home') HOME
             li.item29
-              a(href='http://www.arabeths.com.br/index.php?option=com_content&view=article&id=46&Itemid=29') Festas
+              a(href='#/festa') Festas
             li.item18
-              a(href='http://www.arabeths.com.br/index.php?option=com_content&view=article&id=48&Itemid=18') Buffet
+              a(href='#/buffet') Buffet
             li.item30
-              a(href='http://www.arabeths.com.br/index.php?option=com_content&view=article&id=27&Itemid=30') Contato
+              a(href='#/contato') Contato
             li.item53
-              a(href='http://www.arabeths.com.br/index.php?option=com_content&view=article&id=50&Itemid=53') Localização
+              a(href='#/localizacao') Localização
       header.art-header.clearfix
         .art-shapes
           h1.art-headline(data-left='4.25%', style='left: 156.325px;')
