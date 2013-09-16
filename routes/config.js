@@ -15,8 +15,8 @@ var config = {
         consumerSecret: process.env.consumerSecret
     },
     public: {
-        blogName: 'Demo Site',
-        blogDescription: 'Demo Site',        
+        blogName: 'Arabeths',
+        blogDescription: 'Arabeths',
         url: {            
             site: '/',
             admin: '/admin',
