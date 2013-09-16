@@ -7,9 +7,7 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
     meta(name='keywords', content='arabeths, Arabeths, Restaurante, Buffet')
     meta(name='description', content='TRABALHAMOS NO NOSSO SALÃO PARA ATÉ 120 PESSOAS OU À DOMICILIO. CASAMENTOS, NOIVADOS, CONFRATERNIZAÇÕES, ANIVERSÁRIOS INFANTIS, JANTARES, ÓTIMOS PREÇOS FAÇA ORÇAMENTO SEM COMPROMISSO')
     meta(name='generator', content='Joomla! 1.5 - Open Source Content Management')
-    title #{config.blogName}
-    link(href='http://www.arabeths.com.br/index.php?format=feed&type=rss', rel='alternate', type='application/rss+xml', title='RSS 2.0')
-    link(href='http://www.arabeths.com.br/index.php?format=feed&type=atom', rel='alternate', type='application/atom+xml', title='Atom 1.0')    
+    title #{config.blogName}    
     link(rel='stylesheet', href='stylesheets/app/system.css')
     link(rel='stylesheet', href='stylesheets/app/general.css')
     // Created by Artisteer v4.0.0.58475
@@ -19,16 +17,19 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
     link(rel='stylesheet', href='stylesheets/app/template.css', media='screen')
     //if lte IE 7
       link(rel='stylesheet', href='/templates/arabeths/css/template.ie7.css', media='screen')
-    link(rel='stylesheet', href='stylesheets/app/template.responsive.css', media='all')
+    link(rel='stylesheet', href='stylesheets/app/template.responsive.css', media='link')
+    link(rel='stylesheet', href='stylesheets/vendors/bootstrap.min.css', media='link')
+    link(rel='stylesheet', href='stylesheets/vendors/bootstrap-responsive.min.css', media='link')
     link(rel='stylesheet', type='text/css', href='stylesheets/app/css')
     script
     
-    script(type='text/javascript', src='javascripts/vendors/jquery/jquery-1.10.2.min.js')
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(type='text/javascript', src='javascripts/vendors/bootstrap.min.js')      
     script(src='javascripts/vendors/angular/angular.js')
-    script(src='javascripts/vendors/angular/angular-resource.min.js')
+    script(src='javascripts/vendors/angular/angular-resource.min.js')    
     script(src='javascripts/app/routes.js')    
     script(src='javascripts/app/controllers.js')
-    script(src='javascripts/app/resources.js') 
+    script(src='javascripts/app/resources.js')    
     
     script
       window["_GOOG_TRANS_EXT_VER"] = "1";
@@ -50,7 +51,7 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
       header.art-header.clearfix
         .art-shapes
           h1.art-headline(data-left='4.25%', style='left: 156.325px;')
-            a(href='http://www.arabeths.com.br/media/system/js/Arabeths.html') #{config.blogName}
+            a(href='#/home') #{config.blogName}
           .art-object306567849(data-left='24.91%', style='left: 340.199px;')
       .art-sheet.clearfix
         .art-layout-wrapper.clearfix
@@ -60,8 +61,7 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
         footer.art-footer.clearfix
       p.art-page-footer
         span#art-footnote-links
-          a(href='http://www.artisteer.com/?p=joomla_templates', target='_blank') Joomla template
-          | created with Artisteer.
+          a(href='#/home', target='_blank') Site Arabeths
     #art-resp
       #art-resp-m
       #art-resp-t

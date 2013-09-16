@@ -1,3 +1,4 @@
+
 .art-layout-cell.art-content.clearfix
   div.art-post
     .art-postcontent.clearfix
@@ -6,62 +7,13 @@
   article.art-post.art-messages(style='display: none;')
     .art-postcontent.clearfix
   .blog-featured    
-            article.art-post
-              h2.art-postheader Restaurante Self-Service
+            article.art-post(ng-repeat="post in posts")
+              h2.art-postheader {{post.title}}
               .art-postcontent.clearfix
                 .art-article
                   p(style='text-align: center;')
-                    img(src='https://lh6.googleusercontent.com/-CLqiH43BdMQ/UidFKTkcVqI/AAAAAAAAAFg/lvjbTKNhBew/w309-h206-no/310581_236300526428529_1603137786_n.jpg', border='0', width='260', height='206', style='')
+                    img(ng-src='{{post.img}}', border='0', width='260', height='206', style='')
                   p(style='text-align: center;')
-                    span(style='font-size: 12px; line-height: 17px;')
-                      | RESTAURANTE :
-                      br
-                    span(style='font-size: 12px; line-height: 17px;')
-                      | TRABALHAMOS COM SELF-SERVICE
-                      br
-                      | POR QUILO SEGUNDA À SÁBADO, DAS 10:30 AS
-                    span(style='font-size: 12px; line-height: 17px;')
-                      | 15:00,
-                      br
-                      | CHURRASCO DE QUINTA E SEXTA,
-                      br
-                      | VARIAS OPÇÕES QUENTES E VARIEDADES
-                    span(style='font-size: 12px; line-height: 17px;') EM SALADAS.
+                   {{post.description}}
          
-            article.art-post
-              h2.art-postheader Buffet
-              .art-postcontent.clearfix
-                .art-article
-                  p(style='text-align: center;')
-                    img(src='https://lh5.googleusercontent.com/-ZzJ0B1Drs_8/UidFKeXu-lI/AAAAAAAAAFY/eNeccJE7pIc/w274-h206-no/156363_480632925328620_1623402347_n.jpg', border='0', width='274', height='206', style='')
-                  p(style='text-align: center;')
-                    | BUFFET:
-                    br
-                    | TRABALHAMOS NO NOSSO SALÃO PARA ATÉ 120 PESSOAS
-                    br
-                    | OU À DOMICILIO. CASAMENTOS, NOIVADOS, CONFRATERNIZAÇÕES,
-                    br
-                    | ANIVERSÁRIOS INFANTIS, JANTARES,
-                    br
-                    | ÓTIMOS PREÇOS FAÇA ORÇAMENTO SEM COMPROMISSO
-                    br
-                    script(language='JavaScript', type='text/javascript')
-                    a(href='mailto:SANDRA.ARABE@IG.COM.BR') SANDRA.ARABE@IG.COM.BR
-                    script(language='JavaScript', type='text/javascript')
-                    span(style='display: none;')
-                      | Este endereço de e-mail está protegido contra spambots. Você deve habilitar o JavaScript para visualizá-lo.
-                      script(language='JavaScript', type='text/javascript')
-                    br
-                    | TEL 4104-3888
-                    br
-                    | NEXTEL 7914-4601
-                    br
-                    | ID 927*24605
-                  p  
           
-            article.art-post
-              h2.art-postheader Delivery
-              .art-postcontent.clearfix
-                .art-article
-                  p(style='text-align: center;')
-                    img(src='https://lh3.googleusercontent.com/-v2vvS7TiRvI/UidFK_XdnkI/AAAAAAAAAFk/rlZQGMSqe8s/w640-h480-no/994555_562913853767193_1158598544_n.jpg', border='0', width='274', height='206', style='')

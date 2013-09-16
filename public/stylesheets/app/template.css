@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
 {
   margin: 0;
   padding: 0;
+  color : #D3B79B;
 }
 
 .art-button
@@ -1478,7 +1479,7 @@ pre
 
 .art-postheader
 {
-  color: #FFFFFF;
+  color: #D3B788;
   margin: 0 0 0 5x;
   font-size: 24px;
   font-family: 'Times New Roman', Georgia, Times, Serif;
