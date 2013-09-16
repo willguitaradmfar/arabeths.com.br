@@ -5,6 +5,11 @@
 angular.module('myApp.controllers', []).
   controller('HomeControle', ['$scope', '$http', '$templateCache', 'FotoREST', function($scope, $http, $templateCache, FotoREST) {  
       console.log('HomeControle');
+      $scope.breadcrumb = "HOME"
+
+      
+
+
   }])
 
   .controller('MenuControle', ['$scope', function($scope) {

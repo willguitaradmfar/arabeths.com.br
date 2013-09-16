@@ -2637,3 +2637,8 @@ td.key
   background-image: none;
   padding: 0;
 }
+
+article {
+  float: left;
+  width: 270px;
+}

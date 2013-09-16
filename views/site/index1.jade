@@ -1,6 +1,6 @@
 !!! 5
-// saved from url=(0027)http://www.arabeths.com.br/
-html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3')
+
+html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='en', ng-app='myApp')
   head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     meta(name='robots', content='index, follow')
@@ -19,11 +19,16 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3')
     link(rel='stylesheet', href='stylesheets/app/template.css', media='screen')
     //if lte IE 7
       link(rel='stylesheet', href='/templates/arabeths/css/template.ie7.css', media='screen')
-    link(rel='stylesheet', href='http://www.arabeths.com.br/templates/arabeths/css/template.responsive.css', media='all')
+    link(rel='stylesheet', href='stylesheets/app/template.responsive.css', media='all')
     link(rel='stylesheet', type='text/css', href='stylesheets/app/css')
     script
-      if ('undefined' != typeof jQuery) document._artxJQueryBackup = jQuery;
-    script(src='javascripts/vendors/jquery/jquery-1.10.2.min.js')
+    
+    script(type='text/javascript', src='javascripts/vendors/jquery/jquery-1.10.2.min.js')
+    script(src='javascripts/vendors/angular/angular.js')
+    script(src='javascripts/vendors/angular/angular-resource.min.js')
+    script(src='javascripts/app/routes.js')    
+    script(src='javascripts/app/controllers.js')
+    script(src='javascripts/app/resources.js') 
     
     script
       window["_GOOG_TRANS_EXT_VER"] = "1";
@@ -51,90 +56,7 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3')
         .art-layout-wrapper.clearfix
           .art-content-layout
             .art-content-layout-row
-              .art-layout-cell.art-content.clearfix
-                article.art-post
-                  .art-postcontent.clearfix
-                    span.breadcrumbs.pathway
-                      | Home
-                article.art-post.art-messages(style='display: none;')
-                  .art-postcontent.clearfix
-                .blog-featured
-                  table(width='100%', cellpadding='0', cellspacing='0')
-                    tbody
-                      tr
-                        td.article_column(valign='top', width='33%')
-                          article.art-post
-                            h2.art-postheader Restaurante Self-Service
-                            .art-postcontent.clearfix
-                              .art-article
-                                p(style='text-align: center;')
-                                  img(src='https://lh6.googleusercontent.com/-CLqiH43BdMQ/UidFKTkcVqI/AAAAAAAAAFg/lvjbTKNhBew/w309-h206-no/310581_236300526428529_1603137786_n.jpg', border='0', width='260', height='206', style='')
-                                p(style='text-align: center;')
-                                  span(style='font-size: 12px; line-height: 17px;')
-                                    | RESTAURANTE :
-                                    br
-                                  span(style='font-size: 12px; line-height: 17px;')
-                                    | TRABALHAMOS COM SELF-SERVICE
-                                    br
-                                    | POR QUILO SEGUNDA À SÁBADO, DAS 10:30 AS
-                                  span(style='font-size: 12px; line-height: 17px;')
-                                    | 15:00,
-                                    br
-                                    | CHURRASCO DE QUINTA E SEXTA,
-                                    br
-                                    | VARIAS OPÇÕES QUENTES E VARIEDADES
-                                  span(style='font-size: 12px; line-height: 17px;') EM SALADAS.
-                        td.article_column.column_separator(valign='top', width='33%')
-                          article.art-post
-                            h2.art-postheader Buffet
-                            .art-postcontent.clearfix
-                              .art-article
-                                p(style='text-align: center;')
-                                  img(src='https://lh5.googleusercontent.com/-ZzJ0B1Drs_8/UidFKeXu-lI/AAAAAAAAAFY/eNeccJE7pIc/w274-h206-no/156363_480632925328620_1623402347_n.jpg', border='0', width='274', height='206', style='')
-                                p(style='text-align: center;')
-                                  | BUFFET:
-                                  br
-                                  | TRABALHAMOS NO NOSSO SALÃO PARA ATÉ 120 PESSOAS
-                                  br
-                                  | OU À DOMICILIO. CASAMENTOS, NOIVADOS, CONFRATERNIZAÇÕES,
-                                  br
-                                  | ANIVERSÁRIOS INFANTIS, JANTARES,
-                                  br
-                                  | ÓTIMOS PREÇOS FAÇA ORÇAMENTO SEM COMPROMISSO
-                                  br
-                                  script(language='JavaScript', type='text/javascript')
-                                  a(href='mailto:SANDRA.ARABE@IG.COM.BR') SANDRA.ARABE@IG.COM.BR
-                                  script(language='JavaScript', type='text/javascript')
-                                  span(style='display: none;')
-                                    | Este endereço de e-mail está protegido contra spambots. Você deve habilitar o JavaScript para visualizá-lo.
-                                    script(language='JavaScript', type='text/javascript')
-                                  br
-                                  | TEL 4104-3888
-                                  br
-                                  | NEXTEL 7914-4601
-                                  br
-                                  | ID 927*24605
-                                p  
-                        td.article_column.column_separator(valign='top', width='33%')
-                          article.art-post
-                            h2.art-postheader Delivery
-                            .art-postcontent.clearfix
-                              .art-article
-                                p(style='text-align: center;')
-                                  img(src='https://lh3.googleusercontent.com/-v2vvS7TiRvI/UidFK_XdnkI/AAAAAAAAAFk/rlZQGMSqe8s/w640-h480-no/994555_562913853767193_1158598544_n.jpg', border='0', width='274', height='206', style='')
-                .art-content-layout
-                  .art-content-layout-row
-                    .art-layout-cell(style='width: 100%;')
-                      article.art-post
-                        .art-postcontent.clearfix
-                          form.art-search(action='http://www.arabeths.com.br/index.php', method='post')
-                            .search
-                              div(style='position: relative;')
-                                input#mod_search_searchword.inputbox(name='searchword', maxlength='20', alt='Pesquisa', type='text', size='20', value='pesquisar...', onblur='if(this.value=="") this.value="pesquisar...";', onfocus='if(this.value=="pesquisar...") this.value="";')
-                                input.art-search-button(type='submit', value='')
-                            input(type='hidden', name='task', value='search')
-                            input(type='hidden', name='option', value='com_search')
-                            input(type='hidden', name='Itemid', value='28')
+              div(ng-view='ng-view')
         footer.art-footer.clearfix
       p.art-page-footer
         span#art-footnote-links
