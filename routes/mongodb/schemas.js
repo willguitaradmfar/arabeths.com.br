@@ -8,9 +8,14 @@ mongoose.connect('mongodb://' + config.mongodb.credentials + config.mongodb.host
 	}
 });
 
-
+var postSchema = mongoose.Schema(
+    ({'uid': 'String',
+    				'title': 'String',
+    				'img': 'String',
+    				'description': 'String'})
+);
 //$varNewSchema$
 
 module.exports = {
-//$newSchema$
+   Post: mongoose.model('post', postSchema)//$newSchema$
 };

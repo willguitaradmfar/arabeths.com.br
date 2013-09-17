@@ -8,7 +8,8 @@ var app             = express();
 
 var config          = require('./routes/config');
 
-var query           = {};//$requireFunctions$    
+var query           = {};
+    query.post      = require('./routes/functions/postFunction')(app, db);//$requireFunctions$    
     
 
 app.configure(function() {
@@ -36,7 +37,8 @@ app.get('/postit/config', function(req, res) {
     res.send(config.public);
 });
 
-require('./routes/views/site')(app, config);//$requireAPI$
+require('./routes/views/site')(app, config);
+require('./routes/api/postAPI')(app, config, db, query);//$requireAPI$
 
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,1 @@
+    Post: mongoose.model('post', postSchema)//$newSchema$
