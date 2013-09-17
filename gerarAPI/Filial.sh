@@ -6,6 +6,7 @@ export gPATHFUNCTIONS='../routes/functions'
 export gSCHEMA="({'uid': 'String',
     				'title': 'String',
     				'img': 'String',
+    				'embeded_google_maps': 'String'
     				'description': 'String'})"
 
 export gFILESCHEMA='../routes/mongodb/schemas.js'
