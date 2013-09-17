@@ -9,7 +9,7 @@ angular.module('myApp', ['myApp.controllers', 'myApp.resource']).
     $routeProvider.when('/restaurante', {templateUrl: 'partials/home1', controller: 'RestauranteControle'});    
     $routeProvider.when('/buffet', {templateUrl: 'partials/home1', controller: 'BuffetControle'});
     $routeProvider.when('/contato', {templateUrl: 'partials/home1', controller: 'ContatoControle'});
-    $routeProvider.when('/localizacao', {templateUrl: 'partials/home1', controller: 'LocalControle'});
+    $routeProvider.when('/localizacao', {templateUrl: 'partials/localizacao', controller: 'LocalControle'});
     $routeProvider.when('/povoar', {templateUrl: 'partials/home1', controller: 'PovoarControle'});    
     $routeProvider.otherwise({redirectTo: '/home'});
  }]);

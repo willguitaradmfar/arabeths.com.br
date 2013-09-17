@@ -14,8 +14,16 @@ var postSchema = mongoose.Schema(
     				'img': 'String',
     				'description': 'String'})
 );
+
+var filialSchema = mongoose.Schema(
+    ({'uid': 'String',
+                    'title': 'String',
+                    'img': 'String',
+                    'description': 'String'})
+);
 //$varNewSchema$
 
 module.exports = {
-   Post: mongoose.model('post', postSchema)//$newSchema$
+    Post: mongoose.model('post', postSchema),
+    Filial: mongoose.model('filial', filialSchema)//$newSchema$
 };

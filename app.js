@@ -9,6 +9,7 @@ var app             = express();
 var config          = require('./routes/config');
 
 var query           = {};
+    query.filial    = require('./routes/functions/filialFunction')(app, db);
     query.post      = require('./routes/functions/postFunction')(app, db);//$requireFunctions$    
     
 
@@ -38,6 +39,7 @@ app.get('/postit/config', function(req, res) {
 });
 
 require('./routes/views/site')(app, config);
+require('./routes/api/filialAPI')(app, config, db, query);
 require('./routes/api/postAPI')(app, config, db, query);//$requireAPI$
 
 server.listen(app.get('port'), function(){

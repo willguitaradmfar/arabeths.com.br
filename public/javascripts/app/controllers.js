@@ -2,18 +2,32 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('HomeControle', ['$scope', '$http', '$templateCache', 'PostREST', function($scope, $http, $templateCache, PostREST) {  
+angular.module('myApp.controllers', [])
+ .controller('HomeControle', ['$scope', '$http', '$templateCache', 'PostREST', function($scope, $http, $templateCache, PostREST) {  
       console.log('HomeControle');
+      $scope.breadcrumb = "Home"
 
-      $scope.breadcrumb = "HOME"
       $scope.posts = PostREST.list(function (res) {
           $scope.posts = res;
       });    
 
-     $scope.frase = "ÓTIMOS PREÇOS FAÇA ORÇAMENTO SEM COMPROMISSOSANDRA.ARABE@IG.COM.BR TEL 4104-3888 NEXTEL 7914-4601 ID 927*24605";
+     $scope.frase = " <br/>ÓTIMOS PREÇOS."+
+                      "<br/>FAÇA ORÇAMENTO SEM COMPROMISSO."+
+                      "<br/>Contatos:"+
+                      "<br/>Falar com com Sandra"+
+                      "<br/>TEL 4104-3888 NEXTEL 7914-4601 ID 927*24605"+
+                      "<br/>ou pelo E-mail: SANDRA.ARABE@IG.COM.BR";
 
+  }])
 
+.controller('LocalControle', ['$scope', '$http', '$templateCache', 'FilialREST', function($scope, $http, $templateCache, FilialREST) {  
+      console.log('LocalControle');
+      $scope.breadcrumb = "Localização"
+
+      $scope.filiais = FilialREST.list(function (res) {
+          $scope.filiais = res;
+      });    
+     
   }])
 
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
@@ -33,7 +47,7 @@ angular.module('myApp.controllers', []).
       var post3 = {};
       post3.img = "https://lh3.googleusercontent.com/-v2vvS7TiRvI/UidFK_XdnkI/AAAAAAAAAFk/rlZQGMSqe8s/w640-h480-no/994555_562913853767193_1158598544_n.jpg";
       post3.title = "Delivery";
-      post3.description = "Comida Caseira. Entregamos à Domicilio. Faça já o seu pedido.";
+      post3.description = "COMIDA CASEIRA. ENTREGAMOS À DOMICÍLIO. FAÇA JÁ A SEU PEDIDO.";
 
       PostREST.save(post1);
       PostREST.save(post2);
