@@ -6,12 +6,10 @@
   article.art-post.art-messages(style='display: none;')
     .art-postcontent.clearfix
   .blog-featured    
-            article.art-post(ng-repeat="post in posts")
-              h2.art-postheader {{post.title}}
+            article.art-post(ng-repeat="filial in filiais")
+              h2.art-postheader {{filial.title}}
               .art-postcontent.clearfix
                 .art-article
-                  p(style='text-align: center;')
-                    img(ng-src='{{post.img}}', border='0', width='260', height='206', style='')
-                  p(style='text-align: justify;')
-                   {{post.description}}        
+                  p(style='text-align: center;', ng-bind-html-unsafe="filial.description")                   
+
 

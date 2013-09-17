@@ -1,5 +1,12 @@
 'use strict';
 
+var frase = " <br/>ÓTIMOS PREÇOS."+
+                      "<br/>FAÇA ORÇAMENTO SEM COMPROMISSO."+
+                      "<br/>Contatos:"+
+                      "<br/>Falar com com Sandra"+
+                      "<br/>TEL 4104-3888 NEXTEL 7914-4601 ID 927*24605"+
+                      "<br/>ou pelo E-mail: SANDRA.ARABE@IG.COM.BR";
+
 /* Controllers */
 
 angular.module('myApp.controllers', [])
@@ -11,13 +18,6 @@ angular.module('myApp.controllers', [])
           $scope.posts = res;
       });    
 
-     $scope.frase = " <br/>ÓTIMOS PREÇOS."+
-                      "<br/>FAÇA ORÇAMENTO SEM COMPROMISSO."+
-                      "<br/>Contatos:"+
-                      "<br/>Falar com com Sandra"+
-                      "<br/>TEL 4104-3888 NEXTEL 7914-4601 ID 927*24605"+
-                      "<br/>ou pelo E-mail: SANDRA.ARABE@IG.COM.BR";
-
   }])
 
 .controller('LocalControle', ['$scope', '$http', '$templateCache', 'FilialREST', function($scope, $http, $templateCache, FilialREST) {  
@@ -27,7 +27,7 @@ angular.module('myApp.controllers', [])
       $scope.filiais = FilialREST.list(function (res) {
           $scope.filiais = res;
       });    
-     
+
   }])
 
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
@@ -72,6 +72,8 @@ angular.module('myApp.controllers', [])
         $scope.title = 'Fotos';
       }
     };
+
+    $scope.frase = frase;
 
   }])
   ; 

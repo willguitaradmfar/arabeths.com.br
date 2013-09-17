@@ -27,6 +27,7 @@ module.exports = function(app, config, db, query) {
  		newFilial.uid = req.body.uid
  		newFilial.title = req.body.title
  		newFilial.img = req.body.img
+ 		newFilial.embeded_google_maps = req.body.embeded_google_maps
  		newFilial.description = req.body.description
 
         newFilial.save();
@@ -51,6 +52,7 @@ module.exports = function(app, config, db, query) {
  		newFilial.uid = req.body.uid
  		newFilial.title = req.body.title
  		newFilial.img = req.body.img
+ 		newFilial.embeded_google_maps = req.body.embeded_google_maps
  		newFilial.description = req.body.description            
 
             newFilial.save();
