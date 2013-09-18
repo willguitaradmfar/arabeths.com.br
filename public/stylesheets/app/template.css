@@ -915,11 +915,11 @@ ul.art-hmenu ul
 {
   margin: 0 auto;
   position: relative;
-  height: 370px;
+  height: 336px;
   background-image: url('../images/header.png');
   background-position: center top;
   background-repeat: no-repeat;
-  margin-top: -80px;
+  margin-top: -98px;
 }
 
 .responsive .art-header
@@ -956,7 +956,7 @@ ul.art-hmenu ul
   margin: -90px auto 0;
   position: relative;
   cursor: auto;
-  width: 900px;
+  width: 1000px;
   z-index: auto !important;
 }
 
@@ -2644,5 +2644,5 @@ td.key
 
 article {
   float: left;
-  width: 270px;
+  width: 303px;
 }
