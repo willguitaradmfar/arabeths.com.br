@@ -19,7 +19,7 @@ var schemaMongo = function() {
 		        console.log(err);
 		    } else {
 		        console.log("Gerado Schema "+process.env.gNOMEQ);
-		        injectSchemaMongo(tpl);
+		        //injectSchemaMongo(tpl);
 		    }
 		});
 
@@ -60,7 +60,7 @@ var varSchemaMongo = function() {
 		        console.log(err);
 		    } else {
 		        console.log("Gerado VarSchema "+process.env.gNOMEQ);
-		        injectVarSchemaMongo(tpl);
+		        //injectVarSchemaMongo(tpl);
 		    }
 		});
 
@@ -113,7 +113,7 @@ var api = function() {
 		        console.log(err);
 		    } else {
 		        console.log("Gerado API "+process.env.gNOMEQ);
-		        injectAPI();
+		        //injectAPI();
 
 				fs.rename(process.env.gNOME+"API.js", process.env.gPATHAPI+"/"+process.env.gNOME+"API.js", function(err){
 				    if(err)throw err;
@@ -159,7 +159,7 @@ var functions = function() {
 		    if(err)console.log(err);
 		    else {		    	
 		        console.log("Gerado Functions "+process.env.gNOMEQ);
-		        injectFunctions();
+		        //injectFunctions();
 
 		        fs.rename(process.env.gNOME+"Function.js", process.env.gPATHFUNCTIONS+"/"+process.env.gNOME+"Function.js", function(err){
 				    if(err)throw err;
@@ -219,12 +219,12 @@ var resourceRest = function() {
 	});
 };
 
-/*schemaMongo();
+schemaMongo();
 api();
 setTimeout(function() {
 	functions();
 }, 4000);
 setTimeout(function() {
 	varSchemaMongo();
-}, 2000);*/
+}, 2000);
 resourceRest();
