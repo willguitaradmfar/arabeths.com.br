@@ -30,6 +30,17 @@ angular.module('myApp.controllers', [])
 
   }])
 
+.controller('FestaControle', ['$scope', '$http', '$templateCache', 'FotoREST', function($scope, $http, $templateCache, FotoREST) {  
+      console.log('FestaControle');
+      $scope.breadcrumb = "Festas"
+
+      $scope.fotos = FotoREST.list(function (lista) {
+          $scope.fotos = lista;
+      })
+      
+      $(function (){setTimeout(function(){$('.fotos-festas').fotorama({width: 800, autoplay:4000});},500);});
+  }])
+
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
     console.log('POVOAR Base');
 

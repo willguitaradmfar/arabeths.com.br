@@ -22,10 +22,16 @@ var filialSchema = mongoose.Schema(
                     'embeded_google_maps': 'String',
                     'description': 'String'})
 );
-//$varNewSchema$
+
+var fotoSchema = mongoose.Schema(
+    ({'uid': 'String',
+                    'nome': 'String',
+                    'url': 'String'})
+);
 //$varNewSchema$
 
 module.exports = {
     Post: mongoose.model('post', postSchema),
-    Filial: mongoose.model('filial', filialSchema)//$newSchema$
+    Filial: mongoose.model('filial', filialSchema),
+    Foto: mongoose.model('foto', fotoSchema)//$newSchema$
 };

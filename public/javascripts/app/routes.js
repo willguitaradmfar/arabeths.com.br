@@ -5,7 +5,7 @@
 angular.module('myApp', ['myApp.controllers', 'myApp.resource']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/home', {templateUrl: 'partials/home1', controller: 'HomeControle'});
-    $routeProvider.when('/festa', {templateUrl: 'partials/home1', controller: 'FestaControle'});
+    $routeProvider.when('/festa', {templateUrl: 'partials/festas', controller: 'FestaControle'});
     $routeProvider.when('/restaurante', {templateUrl: 'partials/home1', controller: 'RestauranteControle'});    
     $routeProvider.when('/buffet', {templateUrl: 'partials/home1', controller: 'BuffetControle'});
     $routeProvider.when('/contato', {templateUrl: 'partials/home1', controller: 'ContatoControle'});

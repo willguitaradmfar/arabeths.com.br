@@ -10,7 +10,8 @@ var config          = require('./routes/config');
 
 var query           = {};
     query.filial    = require('./routes/functions/filialFunction')(app, db);
-    query.post      = require('./routes/functions/postFunction')(app, db);//$requireFunctions$    
+    query.post      = require('./routes/functions/postFunction')(app, db);
+    query.foto      = require('./routes/functions/fotoFunction')(app, db);//$requireFunctions$
     
 
 app.configure(function() {
@@ -40,7 +41,8 @@ app.get('/postit/config', function(req, res) {
 
 require('./routes/views/site')(app, config);
 require('./routes/api/filialAPI')(app, config, db, query);
-require('./routes/api/postAPI')(app, config, db, query);//$requireAPI$
+require('./routes/api/postAPI')(app, config, db, query);
+require('./routes/api/fotoAPI')(app, config, db, query);//$requireAPI$
 
 server.listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
