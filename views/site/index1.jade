@@ -33,9 +33,9 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
     
     script
       window["_GOOG_TRANS_EXT_VER"] = "1";
-  body
+  body(ng-controller='MenuControle')
     #art-main
-      nav.art-nav.clearfix.desktop-nav(ng-controller='MenuControle')
+      nav.art-nav.clearfix.desktop-nav
         .art-nav-inner
           ul.art-hmenu
             li#current.active.item28
@@ -60,6 +60,7 @@ html.chrome.chrome27.desktop(dir='ltr', lang='pt-br', slick-uniqueid='3', lang='
           .art-content-layout
             .art-content-layout-row
               div(ng-view='ng-view')
+              p(style="padding-left: 15px;", ng-bind-html-unsafe="frase")
         footer.art-footer.clearfix
       p.art-page-footer
         span#art-footnote-links

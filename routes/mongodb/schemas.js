@@ -8,9 +8,24 @@ mongoose.connect('mongodb://' + config.mongodb.credentials + config.mongodb.host
 	}
 });
 
+var postSchema = mongoose.Schema(
+    ({'uid': 'String',
+    				'title': 'String',
+    				'img': 'String',
+    				'description': 'String'})
+);
 
+var filialSchema = mongoose.Schema(
+    ({'uid': 'String',
+                    'title': 'String',
+                    'img': 'String',
+                    'embeded_google_maps': 'String',
+                    'description': 'String'})
+);
+//$varNewSchema$
 //$varNewSchema$
 
 module.exports = {
-//$newSchema$
+    Post: mongoose.model('post', postSchema),
+    Filial: mongoose.model('filial', filialSchema)//$newSchema$
 };

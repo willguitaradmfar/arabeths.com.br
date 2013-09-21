@@ -113,11 +113,15 @@ var api = function() {
 		        console.log(err);
 		    } else {
 		        console.log("Gerado API "+process.env.gNOMEQ);
+<<<<<<< HEAD
 		        //injectAPI();
+=======
+		       // injectAPI();
+>>>>>>> 9557e3ee2567c8c8ee976da7c3c1a95a70090d36
 
-				fs.rename(process.env.gNOME+"API.js", process.env.gPATHAPI+"/"+process.env.gNOME+"API.js", function(err){
+				/*fs.rename(process.env.gNOME+"API.js", process.env.gPATHAPI+"/"+process.env.gNOME+"API.js", function(err){
 				    if(err)throw err;
-				});	
+				});	*/
 		    }
 		});
 
@@ -159,11 +163,15 @@ var functions = function() {
 		    if(err)console.log(err);
 		    else {		    	
 		        console.log("Gerado Functions "+process.env.gNOMEQ);
+<<<<<<< HEAD
 		        //injectFunctions();
+=======
+		       // injectFunctions();
+>>>>>>> 9557e3ee2567c8c8ee976da7c3c1a95a70090d36
 
-		        fs.rename(process.env.gNOME+"Function.js", process.env.gPATHFUNCTIONS+"/"+process.env.gNOME+"Function.js", function(err){
+		       /* fs.rename(process.env.gNOME+"Function.js", process.env.gPATHFUNCTIONS+"/"+process.env.gNOME+"Function.js", function(err){
 				    if(err)throw err;
-				});
+				});*/
 		    }
 		});
 
