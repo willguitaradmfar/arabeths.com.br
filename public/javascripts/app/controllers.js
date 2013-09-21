@@ -13,10 +13,6 @@ angular.module('myApp.controllers', [])
  .controller('HomeControle', ['$scope', '$http', '$templateCache', 'PostREST', function($scope, $http, $templateCache, PostREST) {  
       console.log('HomeControle');
       $scope.breadcrumb = "Home"
-<<<<<<< HEAD
-      $scope.posts = [];
-      $scope.active = true;
-=======
 
       $scope.posts = PostREST.list(function (res) {
           $scope.posts = res;
@@ -36,7 +32,6 @@ angular.module('myApp.controllers', [])
 
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
     console.log('POVOAR Base');
->>>>>>> 9557e3ee2567c8c8ee976da7c3c1a95a70090d36
 
       var post1 = {};
       post1.img = "https://lh6.googleusercontent.com/-CLqiH43BdMQ/UidFKTkcVqI/AAAAAAAAAFg/lvjbTKNhBew/w309-h206-no/310581_236300526428529_1603137786_n.jpg";
@@ -47,25 +42,13 @@ angular.module('myApp.controllers', [])
       post2.img = "https://lh5.googleusercontent.com/-ZzJ0B1Drs_8/UidFKeXu-lI/AAAAAAAAAFY/eNeccJE7pIc/w274-h206-no/156363_480632925328620_1623402347_n.jpg";
       post2.title = "Buffet";
       post2.description = "TRABALHAMOS NO NOSSO SALÃO PARA ATÉ 120 PESSOAS OU À DOMICILIO. CASAMENTOS, NOIVADOS, CONFRATERNIZAÇÕES, ANIVERSÁRIOS INFANTIS, JANTARES";
-<<<<<<< HEAD
-      $scope.posts.push(post2);
-=======
-      
->>>>>>> 9557e3ee2567c8c8ee976da7c3c1a95a70090d36
+
 
       var post3 = {};
       post3.img = "https://lh3.googleusercontent.com/-v2vvS7TiRvI/UidFK_XdnkI/AAAAAAAAAFk/rlZQGMSqe8s/w640-h480-no/994555_562913853767193_1158598544_n.jpg";
       post3.title = "Delivery";
-<<<<<<< HEAD
-      post3.description = "Comida Caseira. Entregamos à Domicilio. Faça já o seu pedido.";
-      $scope.posts.push(post3);
-
-
-     $scope.frase = "ÓTIMOS PREÇOS FAÇA ORÇAMENTO SEM COMPROMISSOSANDRA.ARABE@IG.COM.BR TEL 4104-3888 NEXTEL 7914-4601 ID 927*24605";
-
-=======
       post3.description = "COMIDA CASEIRA. ENTREGAMOS À DOMICÍLIO. FAÇA JÁ A SEU PEDIDO.";
->>>>>>> 9557e3ee2567c8c8ee976da7c3c1a95a70090d36
+
 
       PostREST.save(post1);
       PostREST.save(post2);
