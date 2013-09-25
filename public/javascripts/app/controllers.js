@@ -38,7 +38,7 @@ angular.module('myApp.controllers', [])
           $scope.fotos = lista;
       })
       
-      $(function (){setTimeout(function(){$('.fotos-festas').fotorama({width: 800, autoplay:4000});},500);});
+      $(function (){setTimeout(function(){$('.fotos-festas').fotorama({width: 950, autoplay:4000});},500);});
   }])
 
 .controller('RestauranteControle', ['$scope', '$http', '$templateCache', 'RestauranteREST', function($scope, $http, $templateCache, RestauranteREST) {  
@@ -49,7 +49,7 @@ angular.module('myApp.controllers', [])
           $scope.fotos = restaurantes;
       })
       
-      $(function (){setTimeout(function(){$('.restaurantes-festas').fotorama({width: 800, autoplay:4000});},500);});
+      $(function (){setTimeout(function(){$('.restaurantes-festas').fotorama({width: 950, autoplay:4000});},500);});
   }])
 
 .controller('BuffetControle', ['$scope', '$http', '$templateCache', 'BuffetREST', function($scope, $http, $templateCache, BuffetREST) {  
@@ -60,7 +60,7 @@ angular.module('myApp.controllers', [])
           $scope.buffets = lista;
       })
       
-      $(function (){setTimeout(function(){$('.buffets-festas').fotorama({width: 800, autoplay:4000});},500);});
+      $(function (){setTimeout(function(){$('.buffets-festas').fotorama({width: 950, autoplay:4000});},500);});
   }])
 
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
