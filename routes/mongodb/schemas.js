@@ -28,10 +28,24 @@ var fotoSchema = mongoose.Schema(
                     'nome': 'String',
                     'url': 'String'})
 );
+
+var buffetSchema = mongoose.Schema(
+    ({'uid': 'String',
+                    'nome': 'String',
+                    'url': 'String'})
+);
+
+var restauranteSchema = mongoose.Schema(
+    ({'uid': 'String',
+                    'nome': 'String',
+                    'url': 'String'})
+);
 //$varNewSchema$
 
 module.exports = {
     Post: mongoose.model('post', postSchema),
     Filial: mongoose.model('filial', filialSchema),
-    Foto: mongoose.model('foto', fotoSchema)//$newSchema$
+    Foto: mongoose.model('foto', fotoSchema),
+    Buffet: mongoose.model('buffet', buffetSchema),
+    Restaurante: mongoose.model('restaurante', restauranteSchema)//$newSchema$
 };

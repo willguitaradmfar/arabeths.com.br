@@ -41,6 +41,28 @@ angular.module('myApp.controllers', [])
       $(function (){setTimeout(function(){$('.fotos-festas').fotorama({width: 800, autoplay:4000});},500);});
   }])
 
+.controller('RestauranteControle', ['$scope', '$http', '$templateCache', 'RestauranteREST', function($scope, $http, $templateCache, RestauranteREST) {  
+      console.log('RestauranteControle');
+      $scope.breadcrumb = "Restaurante"
+
+      $scope.restaurantes = RestauranteREST.list(function (lista) {
+          $scope.fotos = restaurantes;
+      })
+      
+      $(function (){setTimeout(function(){$('.restaurantes-festas').fotorama({width: 800, autoplay:4000});},500);});
+  }])
+
+.controller('BuffetControle', ['$scope', '$http', '$templateCache', 'BuffetREST', function($scope, $http, $templateCache, BuffetREST) {  
+      console.log('BuffetControle');
+      $scope.breadcrumb = "Buffet"
+
+      $scope.buffets = BuffetREST.list(function (lista) {
+          $scope.buffets = lista;
+      })
+      
+      $(function (){setTimeout(function(){$('.buffets-festas').fotorama({width: 800, autoplay:4000});},500);});
+  }])
+
   .controller('PovoarControle', ['$scope', 'PostREST', function($scope, PostREST) {
     console.log('POVOAR Base');
 

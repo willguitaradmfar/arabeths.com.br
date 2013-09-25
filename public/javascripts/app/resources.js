@@ -23,6 +23,26 @@ angular.module('myApp.resource', ["ngResource"])
       });
   })
 
+.factory('BuffetREST', function ($resource) {
+      return $resource('buffet:s/:id', {}, {
+        list: {method:'GET', params : {id : 'all', s : 's'}, isArray:true},
+        get: {method:'GET', params : {id : 'idPassado'}},
+        save: {method:'POST'},
+        update: {method:'PUT', params : {id : 'idPassado'}},
+        delete: {method:'DELETE', params : {id : 'idPassado'}}
+      });
+  })
+
+.factory('RestauranteREST', function ($resource) {
+      return $resource('restaurante:s/:id', {}, {
+        list: {method:'GET', params : {id : 'all', s : 's'}, isArray:true},
+        get: {method:'GET', params : {id : 'idPassado'}},
+        save: {method:'POST'},
+        update: {method:'PUT', params : {id : 'idPassado'}},
+        delete: {method:'DELETE', params : {id : 'idPassado'}}
+      });
+  })
+
  .factory('FilialREST', function ($resource) {
       return $resource('filial:s/:id', {}, {
         list: {method:'GET', params : {id : 'all', s : 's'}, isArray:true},
