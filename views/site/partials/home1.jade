@@ -8,7 +8,8 @@
     .art-postcontent.clearfix
   .blog-featured    
             article.art-post(ng-repeat="post in posts")
-              h2.art-postheader {{post.title}}
+              h2.art-postheader 
+                a(href="#/{{post.link}}") {{post.title}}
               .art-postcontent.clearfix
                 .art-article
                   p(style='text-align: center;')

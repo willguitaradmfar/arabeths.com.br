@@ -27,6 +27,7 @@ module.exports = function(app, config, db, query) {
  		newPost.uid = req.body.uid
  		newPost.title = req.body.title
  		newPost.img = req.body.img
+ 		newPost.link = req.body.link
  		newPost.description = req.body.description
 
         newPost.save();
@@ -51,6 +52,7 @@ module.exports = function(app, config, db, query) {
  		newPost.uid = req.body.uid
  		newPost.title = req.body.title
  		newPost.img = req.body.img
+ 		newPost.link = req.body.link
  		newPost.description = req.body.description            
 
             newPost.save();
