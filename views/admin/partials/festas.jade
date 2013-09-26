@@ -1,0 +1,11 @@
+.art-layout-cell.art-content.clearfix
+  div.art-post
+    .art-postcontent.clearfix
+      span.breadcrumbs.pathway
+        | {{breadcrumb}}
+  article.art-post.art-messages(style='display: none;')
+    .art-postcontent.clearfix
+  .blog-featured(style="margin-left: 20%;")
+    .fotos-festas(data-nav="thumbs", data-navposition="top")
+      a(ng-repeat="foto in fotos", data-caption="{{foto.nome}}")
+        img(ng-src="{{foto.url}}")

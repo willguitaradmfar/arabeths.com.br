@@ -42,7 +42,7 @@ app.get('/postit/config', function(req, res) {
 });
 
 require('./routes/views/site')(app, config);
-require('./routes/api/filialAPI')(app, config, db, query);
+require('./routes/api/filialAPI')(app, config, db, query); 
 require('./routes/api/postAPI')(app, config, db, query);
 require('./routes/api/buffetAPI')(app, config, db, query);
 require('./routes/api/restauranteAPI')(app, config, db, query);
