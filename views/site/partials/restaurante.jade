@@ -1,11 +1,11 @@
 .art-layout-cell.art-content.clearfix
-  div.art-post
-    .art-postcontent.clearfix
-      span.breadcrumbs.pathway
-        | {{breadcrumb}}
-  article.art-post.art-messages(style='display: none;')
-    .art-postcontent.clearfix
-  .blog-featured(style="margin-left: 7%;")
-    .restaurantes-festas(fotorama="apply", data-nav="thumbs", data-navposition="top", data-auto="false")
-      a(ng-repeat="restaurante in restaurantes", data-caption="{{restaurante.nome}}")
-        img(ng-src="{{restaurante.url}}")
+	div.art-post
+		.art-postcontent.clearfix
+			span.breadcrumbs.pathway
+				| {{breadcrumb}}
+	article.art-post.art-messages(style='display: none;')
+		.art-postcontent.clearfix
+	.blog-featured(style="margin-left: 180%; width : 400%;")
+		.restaurantes-festas(fotorama="apply", data-nav="thumbs", data-navposition="top", data-auto="false")
+			a(ng-repeat="restaurante in restaurantes", href="{{restaurante.url}}")
+				img(title="{{restaurante.nome}}", ng-src="{{restaurante.url}}")
