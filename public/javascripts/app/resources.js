@@ -9,7 +9,7 @@ angular.module('myApp.resource', ["ngResource"])
         get: {method:'GET', params : {id : 'idPassado'}},
         save: {method:'POST'},
         update: {method:'PUT', params : {id : 'idPassado'}},
-        delete: {method:'DELETE', params : {id : 'idPassado'}}
+        excluir: {method:'DELETE', params : {id : 'idPassado'}}
       });
   })
 
@@ -19,7 +19,7 @@ angular.module('myApp.resource', ["ngResource"])
         get: {method:'GET', params : {id : 'idPassado'}},
         save: {method:'POST'},
         update: {method:'PUT', params : {id : 'idPassado'}},
-        delete: {method:'DELETE', params : {id : 'idPassado'}}
+        excluir: {method:'DELETE', params : {id : 'idPassado'}}
       });
   })
 
@@ -29,7 +29,7 @@ angular.module('myApp.resource', ["ngResource"])
         get: {method:'GET', params : {id : 'idPassado'}},
         save: {method:'POST'},
         update: {method:'PUT', params : {id : 'idPassado'}},
-        delete: {method:'DELETE', params : {id : 'idPassado'}}
+        excluir: {method:'DELETE', params : {id : 'idPassado'}}
       });
   })
 
@@ -39,7 +39,7 @@ angular.module('myApp.resource', ["ngResource"])
         get: {method:'GET', params : {id : 'idPassado'}},
         save: {method:'POST'},
         update: {method:'PUT', params : {id : 'idPassado'}},
-        delete: {method:'DELETE', params : {id : 'idPassado'}}
+        excluir: {method:'DELETE', params : {id : 'idPassado'}}
       });
   })
 
@@ -49,7 +49,7 @@ angular.module('myApp.resource', ["ngResource"])
         get: {method:'GET', params : {id : 'idPassado'}},
         save: {method:'POST'},
         update: {method:'PUT', params : {id : 'idPassado'}},
-        delete: {method:'DELETE', params : {id : 'idPassado'}}
+        excluir: {method:'DELETE', params : {id : 'idPassado'}}
       });
   })
   ;
