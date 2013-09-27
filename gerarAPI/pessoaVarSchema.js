@@ -1,1 +1,0 @@
-    Pessoa: mongoose.model('pessoa', pessoaSchema)//$newSchema$

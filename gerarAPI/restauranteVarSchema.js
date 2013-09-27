@@ -1,1 +1,0 @@
-    Restaurante: mongoose.model('restaurante', restauranteSchema)//$newSchema$
