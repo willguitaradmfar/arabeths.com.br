@@ -1,0 +1,34 @@
+<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Nome
+						</th>
+						<th>
+							Telefone
+						</th>
+						<th>
+							Email
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="pessoa in pessoas">
+						<td>
+							{{pessoa.id}}
+						</td>
+						<td>
+							{{pessoa.nome}}
+						</td>
+						<td>
+							{{pessoa.telefone}}
+						</td>
+						<td>
+							{{pessoa.email}}
+						</td>
+					</tr>					
+				</tbody>
+			</table>
