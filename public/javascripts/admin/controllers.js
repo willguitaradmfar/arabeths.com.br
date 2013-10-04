@@ -14,7 +14,7 @@ angular.module('admin.controllers', [])
                   link : "pessoas"
                   },{
                   name : "Novo",
-                  link : "novo"
+                  link : "pessoa"
                   }]
       },{
         id : 2,
@@ -22,41 +22,49 @@ angular.module('admin.controllers', [])
        listSubMenu : [{
                   name : "Listar",
                   link : "fotos"
+                  },{
+                  name : "Novo",
+                  link : "foto"
                   }]
       }];
       
 
   }])
  
- .controller('PessoaControlller', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
+ .controller('PessoaControlller', ['$scope', '$http', '$templateCache', '$routeParams', function($scope, $http, $templateCache, $routeParams) {  
       console.log('PessoaControlller');
       $scope.pessoas = [{
         id : 1,
-        nome : "William Lima",
+        nome : "William Lima 1",
         telefone : "11 9999-99999",
         email : "willguitaradmfar@gmail.com"
       },{
         id : 2,
-        nome : "William Lima",
+        nome : "William Lima 2",
         telefone : "11 9999-99999",
         email : "willguitaradmfar@gmail.com"
       },{
         id : 3,
-        nome : "William Lima",
+        nome : "William Lima 3",
         telefone : "11 9999-99999",
         email : "willguitaradmfar@gmail.com"
       },{
         id : 4,
-        nome : "William Lima",
+        nome : "William Lima 4",
         telefone : "11 9999-99999",
         email : "willguitaradmfar@gmail.com"
       }];
 
-
+      for(var pessoa in $scope.pessoas){
+        if($routeParams.id == $scope.pessoas[pessoa].id){
+          $scope.pessoa = $scope.pessoas[pessoa];
+        }
+      }
+     
 
   }])
 
-.controller('FotoControlller', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
+.controller('FotoControlller', ['$scope', '$http', '$templateCache', '$routeParams', function($scope, $http, $templateCache, $routeParams) {  
       console.log('FotoControlller');
 
       $scope.fotos = [{
@@ -76,6 +84,28 @@ angular.module('admin.controllers', [])
         nome : "William Lima",
         link : "http://portaldorodeiro.com.br/cr/wp-content/uploads/2011/10/Red.jpg"
       }];
+
+      for(var foto in $scope.fotos){
+        if($routeParams.id == $scope.fotos[foto].id){
+          $scope.foto = $scope.fotos[foto];
+        }
+      }
+
+
+  }])
+
+.controller('MenuHorizontalRightController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
+      console.log('MenuHorizontalRightController');
+
+  $scope.listMenu = [{nome : "Sair", link : "#/sair"}, {nome : "Configurações", link : "#/config"}];
+
+
+  }])
+
+.controller('MenuHorizontalLeftController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
+      console.log('MenuHorizontalLeftController');
+
+      $scope.listMenu = [{nome : "Home", link : "#/home"}, {nome : "Fotos", link : "#/fotos"}];
 
 
   }])

@@ -5,7 +5,11 @@
 angular.module('admin', ['admin.controllers', 'admin.resource', 'admin.directives']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/pessoas', {templateUrl: 'partials/pessoas.html', controller: 'PessoaControlller'});
+    $routeProvider.when('/pessoa/:id', {templateUrl: 'partials/pessoa.html', controller: 'PessoaControlller'});
+    $routeProvider.when('/pessoa', {templateUrl: 'partials/pessoa.html', controller: 'PessoaControlller'});
     $routeProvider.when('/fotos', {templateUrl: 'partials/fotos.html', controller: 'FotoControlller'});
+    $routeProvider.when('/foto/:id', {templateUrl: 'partials/foto.html', controller: 'FotoControlller'});
+    $routeProvider.when('/foto', {templateUrl: 'partials/foto.html', controller: 'FotoControlller'});
     
     $routeProvider.otherwise({redirectTo: '/pessoas'});
  }]);

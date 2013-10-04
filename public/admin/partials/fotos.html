@@ -13,6 +13,9 @@
 						<th>
 							Imagem
 						</th>
+						<th>
+							Opções
+						</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,8 +30,11 @@
 							<a href="{{foto.link}}" target="_blank">{{foto.link}}</a>
 						</td>		
 						<td>							
-							<img src="{{foto.link}}" style="width: 30%;">
-						</td>		
+							<img ng-src="{{foto.link}}" style="width: 30%;">
+						</td>	
+						<td>
+							<a href="#/foto/{{foto.id}}">Editar</a>							
+						</td>	
 						
 					</tr>					
 				</tbody>
