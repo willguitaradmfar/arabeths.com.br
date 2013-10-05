@@ -1,0 +1,43 @@
+<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th style="width: 25%;">
+							Título
+						</th>						
+						<th>
+							Descrição
+						</th>
+						<th>
+							Conteúdo
+						</th>
+						<th style="width: 20%;">
+							Opções
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="artigo in artigos">
+						<td>
+							{{artigo.id}}
+						</td>
+						<td>
+							{{artigo.titulo}}
+						</td>
+						<td>
+							{{artigo.descricao}}
+						</td>
+						<td>
+							{{artigo.conteudo}}
+						</td>
+
+						<td>
+							<a class="btn btn-info" href="#/artigo/{{artigo.id}}">Editar</a>							
+							<button class="btn btn-danger" ng-click="excluir(artigo)">Excluir</button>					
+						</td>	
+						
+					</tr>					
+				</tbody>
+			</table>

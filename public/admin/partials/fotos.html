@@ -6,14 +6,11 @@
 						</th>
 						<th style="width: 25%;">
 							Nome
-						</th>
-						<th style="width: 50%;">
-							Link
-						</th>
+						</th>						
 						<th>
 							Imagem
 						</th>
-						<th>
+						<th style="width: 20%;">
 							Opções
 						</th>
 					</tr>
@@ -26,14 +23,13 @@
 						<td>
 							{{foto.nome}}
 						</td>
-						<td>
-							<a href="{{foto.link}}" target="_blank">{{foto.link}}</a>
-						</td>		
+						
 						<td>							
 							<img ng-src="{{foto.link}}" style="width: 30%;">
 						</td>	
 						<td>
-							<a href="#/foto/{{foto.id}}">Editar</a>							
+							<a class="btn btn-info" href="#/foto/{{foto.id}}">Editar</a>							
+							<button class="btn btn-danger" ng-click="excluir(foto)">Excluir</button>					
 						</td>	
 						
 					</tr>					

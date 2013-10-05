@@ -1,0 +1,31 @@
+<form class="form-horizontal">
+	<fieldset>
+		 <legend class="text-left muted">Formulário de Artigo #{{artigo.id}}</legend>
+		
+		<div class="control-group">
+			 <label class="control-label" for="inputTitulo">Título</label>
+			<div class="controls">
+				<input type="text" id="inputTitulo" ng-model="artigo.titulo"/>
+			</div>
+		</div>
+		<div class="control-group">
+			 <label class="control-label" for="inputDescricao">Descrição</label>
+			<div class="controls">
+				<input type="text" id="inputDescricao" ng-model="artigo.descricao"/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			 <label class="control-label" for="inputConteudo">Conteúdo</label>
+			<div class="controls">				
+				<textarea ng-model="artigo.conteudo" id="inputConteudo"></textarea>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<div class="controls">				 
+				 <button class="btn btn-success" ng-click="save(artigo)">Ok</button>		 
+			</div>
+		</div>
+	</fieldset>
+</form>

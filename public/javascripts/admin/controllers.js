@@ -26,71 +26,100 @@ angular.module('admin.controllers', [])
                   name : "Novo",
                   link : "foto"
                   }]
+      },{
+        id : 3,
+       name : "Gerenciar Artigos",
+       listSubMenu : [{
+                  name : "Listar",
+                  link : "artigos"
+                  },{
+                  name : "Novo",
+                  link : "artigo"
+                  }]
       }];
       
 
   }])
  
- .controller('PessoaControlller', ['$scope', '$http', '$templateCache', '$routeParams', function($scope, $http, $templateCache, $routeParams) {  
+ .controller('PessoaControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'PessoaREST', function($scope, $location, $templateCache, $routeParams, PessoaREST) {  
       console.log('PessoaControlller');
-      $scope.pessoas = [{
-        id : 1,
-        nome : "William Lima 1",
-        telefone : "11 9999-99999",
-        email : "willguitaradmfar@gmail.com"
-      },{
-        id : 2,
-        nome : "William Lima 2",
-        telefone : "11 9999-99999",
-        email : "willguitaradmfar@gmail.com"
-      },{
-        id : 3,
-        nome : "William Lima 3",
-        telefone : "11 9999-99999",
-        email : "willguitaradmfar@gmail.com"
-      },{
-        id : 4,
-        nome : "William Lima 4",
-        telefone : "11 9999-99999",
-        email : "willguitaradmfar@gmail.com"
-      }];
 
-      for(var pessoa in $scope.pessoas){
-        if($routeParams.id == $scope.pessoas[pessoa].id){
-          $scope.pessoa = $scope.pessoas[pessoa];
+      $scope.pessoas = PessoaREST.list();
+
+      $scope.pessoa = PessoaREST.get($routeParams.id);
+
+      $scope.save = function(obj) {
+        if(obj.id){
+          $scope.pessoa = PessoaREST.update(obj);
+        }else{
+          obj.id = $scope.pessoas.length+1
+          $scope.pessoa = PessoaREST.save(obj);
         }
-      }
+        $scope.pessoas = PessoaREST.list();
+        $location.path('/pessoas');
+      };
+
+       $scope.excluir = function(obj) {
+        if(obj.id){
+          $scope.pessoa = PessoaREST.excluir(obj);
+        }
+        $scope.pessoas = PessoaREST.list();        
+      };
      
 
   }])
 
-.controller('FotoControlller', ['$scope', '$http', '$templateCache', '$routeParams', function($scope, $http, $templateCache, $routeParams) {  
+.controller('FotoControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'FotoREST', function($scope, $location, $templateCache, $routeParams, FotoREST) {  
       console.log('FotoControlller');
 
-      $scope.fotos = [{
-        id : 1,
-        nome : "William Lima",
-        link : "http://portaldorodeiro.com.br/cr/wp-content/uploads/2011/10/Red.jpg"        
-      },{
-        id : 2,
-        nome : "William Lima",
-        link : "http://portaldorodeiro.com.br/cr/wp-content/uploads/2011/10/Red.jpg"
-      },{
-        id : 3,
-        nome : "William Lima",
-        link : "http://blog.clickgratis.com.br/uploads/c/Crispazeluz/323531.jpg"
-      },{
-        id : 4,
-        nome : "William Lima",
-        link : "http://portaldorodeiro.com.br/cr/wp-content/uploads/2011/10/Red.jpg"
-      }];
+     $scope.fotos = FotoREST.list();
 
-      for(var foto in $scope.fotos){
-        if($routeParams.id == $scope.fotos[foto].id){
-          $scope.foto = $scope.fotos[foto];
+      $scope.foto = FotoREST.get($routeParams.id);
+
+      $scope.save = function(obj) {
+        if(obj.id){
+          $scope.foto = FotoREST.update(obj);
+        }else{
+          obj.id = $scope.fotos.length+1
+          $scope.foto = FotoREST.save(obj);
         }
-      }
+        $scope.fotos = FotoREST.list();
+        $location.path('/fotos');
+      };
 
+       $scope.excluir = function(obj) {
+        if(obj.id){
+          $scope.foto = FotoREST.excluir(obj);
+        }
+        $scope.fotos = FotoREST.list();
+      };
+
+  }])
+
+.controller('ArtigoControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'ArtigoREST', function($scope, $location, $templateCache, $routeParams, ArtigoREST) {  
+      console.log('ArtigoControlller');
+
+     $scope.artigos = ArtigoREST.list();
+
+      $scope.artigo = ArtigoREST.get($routeParams.id);
+
+      $scope.save = function(obj) {
+        if(obj.id){
+          $scope.artigo = ArtigoREST.update(obj);
+        }else{
+          obj.id = $scope.artigos.length+1
+          $scope.artigo = ArtigoREST.save(obj);
+        }
+        $scope.artigos = ArtigoREST.list();
+        $location.path('/artigos');
+      };
+
+       $scope.excluir = function(obj) {
+        if(obj.id){
+          $scope.artigo = ArtigoREST.excluir(obj);
+        }
+        $scope.artigos = ArtigoREST.list();
+      };
 
   }])
 
@@ -105,7 +134,7 @@ angular.module('admin.controllers', [])
 .controller('MenuHorizontalLeftController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
       console.log('MenuHorizontalLeftController');
 
-      $scope.listMenu = [{nome : "Home", link : "#/home"}, {nome : "Fotos", link : "#/fotos"}];
+      $scope.listMenu = [{nome : "Home", link : "#/home"}, {nome : "Gerenciar", link : "#/gerenciar"}];
 
 
   }])

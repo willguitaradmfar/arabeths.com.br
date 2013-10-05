@@ -33,7 +33,8 @@
 					{{pessoa.email}}
 				</td>
 				<td>
-					<a href="#/pessoa/{{pessoa.id}}">Editar</a>							
+					<a class="btn btn-info" href="#/pessoa/{{pessoa.id}}">Editar</a>						
+					<button class="btn btn-danger" ng-click="excluir(pessoa)">Excluir</button>	
 				</td>
 			</tr>					
 		</tbody>
