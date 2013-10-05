@@ -3,49 +3,17 @@
 /* Controllers */
 
 angular.module('admin.controllers', [])
- .controller('MenuVerticalController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
-      console.log('MenuVerticalController');
-
-      $scope.listMenu = [{
-        id : 1,
-       name : "Gerenciar Pessoa",
-       listSubMenu : [{
-                  name : "Listar",
-                  link : "pessoas"
-                  },{
-                  name : "Novo",
-                  link : "pessoa"
-                  }]
-      },{
-        id : 2,
-       name : "Gerenciar Fotos",
-       listSubMenu : [{
-                  name : "Listar",
-                  link : "fotos"
-                  },{
-                  name : "Novo",
-                  link : "foto"
-                  }]
-      },{
-        id : 3,
-       name : "Gerenciar Artigos",
-       listSubMenu : [{
-                  name : "Listar",
-                  link : "artigos"
-                  },{
-                  name : "Novo",
-                  link : "artigo"
-                  }]
-      }];
-      
-
-  }])
  
  .controller('PessoaControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'PessoaREST', function($scope, $location, $templateCache, $routeParams, PessoaREST) {  
       console.log('PessoaControlller');
 
+       $scope.listMenu = [{
+        id : 1,
+       name : "Opções",
+       listSubMenu : [{name : "Incluir Pessoa", link : "pessoa"},{name : "Listar Pessoas", link : "pessoas"}]
+      }];
+      $scope.info = {};
       $scope.pessoas = PessoaREST.list();
-
       $scope.pessoa = PessoaREST.get($routeParams.id);
 
       $scope.save = function(obj) {
@@ -57,12 +25,16 @@ angular.module('admin.controllers', [])
         }
         $scope.pessoas = PessoaREST.list();
         $location.path('/pessoas');
+        
       };
 
-       $scope.excluir = function(obj) {
+       $scope.excluir = function(obj) {       
         if(obj.id){
           $scope.pessoa = PessoaREST.excluir(obj);
         }
+        
+        $scope.info.msg = "Pessoa #"+obj.id+" excluída";
+        $scope.info.type = "success";
         $scope.pessoas = PessoaREST.list();        
       };
      
@@ -72,7 +44,14 @@ angular.module('admin.controllers', [])
 .controller('FotoControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'FotoREST', function($scope, $location, $templateCache, $routeParams, FotoREST) {  
       console.log('FotoControlller');
 
-     $scope.fotos = FotoREST.list();
+      $scope.listMenu = [{
+        id : 1,
+       name : "Opções",
+       listSubMenu : [{name : "Incluir Foto", link : "foto"},{name : "Listar Fotos", link : "fotos"}]
+      }];
+
+      $scope.info = {};
+      $scope.fotos = FotoREST.list();
 
       $scope.foto = FotoREST.get($routeParams.id);
 
@@ -85,12 +64,16 @@ angular.module('admin.controllers', [])
         }
         $scope.fotos = FotoREST.list();
         $location.path('/fotos');
+        
       };
 
        $scope.excluir = function(obj) {
         if(obj.id){
           $scope.foto = FotoREST.excluir(obj);
         }
+        
+        $scope.info.msg = "Foto #"+obj.id+" excluída";
+        $scope.info.type = "success";
         $scope.fotos = FotoREST.list();
       };
 
@@ -99,7 +82,13 @@ angular.module('admin.controllers', [])
 .controller('ArtigoControlller', ['$scope', '$location', '$templateCache', '$routeParams', 'ArtigoREST', function($scope, $location, $templateCache, $routeParams, ArtigoREST) {  
       console.log('ArtigoControlller');
 
-     $scope.artigos = ArtigoREST.list();
+       $scope.listMenu = [{
+        id : 1,
+       name : "Opções",
+       listSubMenu : [{name : "Incluir Artigo", link : "artigo"},{name : "Listar Artigos", link : "artigos"}]
+      }];
+      $scope.info = {};
+      $scope.artigos = ArtigoREST.list();
 
       $scope.artigo = ArtigoREST.get($routeParams.id);
 
@@ -112,12 +101,16 @@ angular.module('admin.controllers', [])
         }
         $scope.artigos = ArtigoREST.list();
         $location.path('/artigos');
+        
       };
 
        $scope.excluir = function(obj) {
         if(obj.id){
           $scope.artigo = ArtigoREST.excluir(obj);
         }
+        
+        $scope.info.msg = "Artigo #"+obj.id+" excluída";
+        $scope.info.type = "success";
         $scope.artigos = ArtigoREST.list();
       };
 
@@ -128,16 +121,21 @@ angular.module('admin.controllers', [])
 
   $scope.listMenu = [{nome : "Sair", link : "#/sair"}, {nome : "Configurações", link : "#/config"}];
 
-
   }])
 
 .controller('MenuHorizontalLeftController', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
       console.log('MenuHorizontalLeftController');
 
-      $scope.listMenu = [{nome : "Home", link : "#/home"}, {nome : "Gerenciar", link : "#/gerenciar"}];
-
+      $scope.listMenu = [{nome : "Pessoa", link : "#/pessoas"}, {nome : "Artigo", link : "#/artigos"}, {nome : "Foto", link : "#/fotos"}];
 
   }])
+.controller('HomeControlller', ['$scope', '$http', '$templateCache', function($scope, $http, $templateCache) {  
+      console.log('HomeControlller');
+      
+
+  }])
+
+
 
  
 

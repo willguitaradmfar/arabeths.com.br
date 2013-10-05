@@ -1,43 +1,82 @@
-<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>
-							#
-						</th>
-						<th style="width: 25%;">
-							Título
-						</th>						
-						<th>
-							Descrição
-						</th>
-						<th>
-							Conteúdo
-						</th>
-						<th style="width: 20%;">
-							Opções
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="artigo in artigos">
-						<td>
-							{{artigo.id}}
-						</td>
-						<td>
-							{{artigo.titulo}}
-						</td>
-						<td>
-							{{artigo.descricao}}
-						</td>
-						<td>
-							{{artigo.conteudo}}
-						</td>
+<div class="span2">
+	<div class="accordion" id="accordion-87476">
+		<div class="accordion-group" ng-repeat="menu in listMenu">
+			<div class="accordion-heading">
+				 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-menu{{menu.id}}" href="#accordion-element{{menu.id}}">{{menu.name}}</a>
+			</div>
+			<div id="accordion-element{{menu.id}}" class="accordion-body collapse in">
+				<div class="accordion-inner" ng-repeat="subMenu in menu.listSubMenu">
+					<a href="#/{{subMenu.link}}" style="color : black" class="btn btn-link">{{subMenu.name}}</a>
+				</div>								
+			</div>
+		</div>					
+	</div>
+</div>
+<div class="span10">
+<div class="page-header">
+	<h1>
+		Lista de Artigos <small>Gerenciamento</small>
+	</h1>
+</div>
+<div class="alert alert-{{info.type}}" >{{info.msg}}</div>
+	<table class="table table-hover table-condensed">
+		<thead>
+			<tr>
+				<th>
+					#
+				</th>
+				<th style="width: 25%;">
+					Título
+				</th>						
+				<th>
+					Descrição
+				</th>
+				<th>
+					Conteúdo
+				</th>
+				<th style="width: 20%;">
+					Opções
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="artigo in artigos">
+				<td>
+					{{artigo.id}}
+				</td>
+				<td>
+					{{artigo.titulo}}
+				</td>
+				<td>
+					{{artigo.descricao}}
+				</td>
+				<td>
+					{{artigo.conteudo}}
+				</td>
 
-						<td>
-							<a class="btn btn-info" href="#/artigo/{{artigo.id}}">Editar</a>							
-							<button class="btn btn-danger" ng-click="excluir(artigo)">Excluir</button>					
-						</td>	
-						
-					</tr>					
-				</tbody>
-			</table>
+				<td>
+					<a class="btn btn-info" href="#/artigo/{{artigo.id}}">Editar</a>											
+					<a class="btn btn-danger" id="modal-{{artigo.id}}" href="#modal-container-{{artigo.id}}" role="button" class="btn" data-toggle="modal">Excluir</a>
+					<div id="modal-container-{{artigo.id}}" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3 id="myModalLabel">
+								Exclusão
+							</h3>
+						</div>
+						<div class="modal-body">
+							<p>
+								Deseja excluir #{{artigo.id}}?
+							</p>
+						</div>
+						<div class="modal-footer">
+							 <button class="btn" data-dismiss="modal" aria-hidden="true">Não Excluir</button> 
+							 <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" ng-click="excluir(artigo)">Excluir</button>
+						</div>
+					</div>
+				</td>		
+				
+			</tr>					
+		</tbody>
+	</table>
+</div>

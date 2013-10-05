@@ -4,6 +4,7 @@
 // Declare app level module which depends on filters, and services
 angular.module('admin', ['admin.controllers', 'admin.resource', 'admin.directives']).
   config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/home', {templateUrl: 'partials/home.html', controller: 'HomeControlller'});
     $routeProvider.when('/pessoas', {templateUrl: 'partials/pessoas.html', controller: 'PessoaControlller'});
     $routeProvider.when('/pessoa/:id', {templateUrl: 'partials/pessoa.html', controller: 'PessoaControlller'});
     $routeProvider.when('/pessoa', {templateUrl: 'partials/pessoa.html', controller: 'PessoaControlller'});
@@ -14,7 +15,7 @@ angular.module('admin', ['admin.controllers', 'admin.resource', 'admin.directive
     $routeProvider.when('/artigo/:id', {templateUrl: 'partials/artigo.html', controller: 'ArtigoControlller'});
     $routeProvider.when('/artigo', {templateUrl: 'partials/artigo.html', controller: 'ArtigoControlller'});
     
-    $routeProvider.otherwise({redirectTo: '/pessoas'});
+    $routeProvider.otherwise({redirectTo: '/home'});
  }]);
 
 

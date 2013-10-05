@@ -1,29 +1,49 @@
-<form class="form-horizontal">
-	<fieldset>
-		 <legend class="text-left muted">Formulário de Pessoa #{{pessoa.id}}</legend>
-		
-		<div class="control-group">
-			 <label class="control-label" for="inputNome">Nome</label>
-			<div class="controls">
-				<input type="text" id="inputNome" ng-model="pessoa.nome"/>
+<div class="span2">
+	<div class="accordion" id="accordion-87476">
+		<div class="accordion-group" ng-repeat="menu in listMenu">
+			<div class="accordion-heading">
+				 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-menu{{menu.id}}" href="#accordion-element{{menu.id}}">{{menu.name}}</a>
 			</div>
-		</div>
-		<div class="control-group">
-			 <label class="control-label" for="inputEmail">Email</label>
-			<div class="controls">
-				<input type="text" id="inputEmail" ng-model="pessoa.email"/>
+			<div id="accordion-element{{menu.id}}" class="accordion-body collapse in">
+				<div class="accordion-inner" ng-repeat="subMenu in menu.listSubMenu">
+					<a href="#/{{subMenu.link}}" style="color : black" class="btn btn-link">{{subMenu.name}}</a>
+				</div>								
 			</div>
-		</div>
-		<div class="control-group">
-			 <label class="control-label" for="inputTelefone">Telefone</label>
-			<div class="controls">
-				<input type="text" id="inputTelefone" ng-model="pessoa.telefone"/>
+		</div>					
+	</div>
+</div>
+<div class="span10">
+	<form class="form-horizontal">
+		<fieldset>
+			 <div class="page-header">
+				<h1>					
+					Formulário de Pessoa <small>#{{pessoa.id}}</small>
+				</h1>
 			</div>
-		</div>	
-		<div class="control-group">
-			<div class="controls">
-				 <button class="btn btn-success" ng-click="save(pessoa)">Ok</button>
+			
+			<div class="control-group">
+				 <label class="control-label" for="inputNome">Nome</label>
+				<div class="controls">
+					<input type="text" id="inputNome" ng-model="pessoa.nome"/>
+				</div>
 			</div>
-		</div>
-	</fieldset>
-</form>
+			<div class="control-group">
+				 <label class="control-label" for="inputEmail">Email</label>
+				<div class="controls">
+					<input type="text" id="inputEmail" ng-model="pessoa.email"/>
+				</div>
+			</div>
+			<div class="control-group">
+				 <label class="control-label" for="inputTelefone">Telefone</label>
+				<div class="controls">
+					<input type="text" id="inputTelefone" ng-model="pessoa.telefone"/>
+				</div>
+			</div>	
+			<div class="control-group">
+				<div class="controls">
+					 <button class="btn btn-success" ng-click="save(pessoa)">Ok</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

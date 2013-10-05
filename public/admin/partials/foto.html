@@ -1,29 +1,49 @@
-<form class="form-horizontal">
-	<fieldset>
-		 <legend class="text-left muted">Formulário de Foto #{{foto.id}}</legend>
-		
-		<div class="control-group">
-			 <label class="control-label" for="inputNome">Nome</label>
-			<div class="controls">
-				<input type="text" id="inputNome" ng-model="foto.nome"/>
+<div class="span2">
+	<div class="accordion" id="accordion-87476">
+		<div class="accordion-group" ng-repeat="menu in listMenu">
+			<div class="accordion-heading">
+				 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-menu{{menu.id}}" href="#accordion-element{{menu.id}}">{{menu.name}}</a>
 			</div>
-		</div>
-		<div class="control-group">
-			 <label class="control-label" for="inputLink">Link</label>
-			<div class="controls">
-				<input type="text" id="inputLink" ng-model="foto.link"/>
+			<div id="accordion-element{{menu.id}}" class="accordion-body collapse in">
+				<div class="accordion-inner" ng-repeat="subMenu in menu.listSubMenu">
+					<a href="#/{{subMenu.link}}" style="color : black" class="btn btn-link">{{subMenu.name}}</a>
+				</div>								
 			</div>
-		</div>
-		<div class="control-group">
-			 <label class="control-label" for="inputImagem">Imagem</label>
-			<div class="controls">
-				<img ng-src="{{foto.link}}" id="inputImagem" width="200"/>
+		</div>					
+	</div>
+</div>
+<div class="span10">
+	<form class="form-horizontal">
+		<fieldset>
+			 <div class="page-header">
+				<h1>					
+					Formulário de Foto <small>#{{foto.id}}</small>
+				</h1>
 			</div>
-		</div>	
-		<div class="control-group">
-			<div class="controls">				 
-				 <button class="btn btn-success" ng-click="save(foto)">Ok</button>		 
+			
+			<div class="control-group">
+				 <label class="control-label" for="inputNome">Nome</label>
+				<div class="controls">
+					<input type="text" id="inputNome" ng-model="foto.nome"/>
+				</div>
 			</div>
-		</div>
-	</fieldset>
-</form>
+			<div class="control-group">
+				 <label class="control-label" for="inputLink">Link</label>
+				<div class="controls">
+					<input type="text" id="inputLink" ng-model="foto.link"/>
+				</div>
+			</div>
+			<div class="control-group">
+				 <label class="control-label" for="inputImagem">Imagem</label>
+				<div class="controls">
+					<img ng-src="{{foto.link}}" id="inputImagem" width="200"/>
+				</div>
+			</div>	
+			<div class="control-group">
+				<div class="controls">				 
+					 <button class="btn btn-success" ng-click="save(foto)">Ok</button>		 
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>
