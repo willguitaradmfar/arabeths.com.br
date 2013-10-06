@@ -19,58 +19,31 @@
 	</h1>
 </div>
 <div class="alert alert-{{info.type}}" >{{info.msg}}</div>
-	<table class="table table-hover table-condensed">
-		<thead>
-			<tr>
-				<th>
-					#
-				</th>
-				<th style="width: 25%;">
-					Nome
-				</th>						
-				<th>
-					Imagem
-				</th>
-				<th style="width: 20%;">
-					Opções
-				</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="foto in fotos">
-				<td>
-					{{foto.id}}
-				</td>
-				<td>
-					{{foto.nome}}
-				</td>
-				
-				<td>							
-					<img ng-src="{{foto.link}}" style="width: 30%;">
-				</td>						
-				<td>
-					<a class="btn btn-info" href="#/foto/{{foto.id}}">Editar</a>											
-					<a class="btn btn-danger" id="modal-{{foto.id}}" href="#modal-container-{{foto.id}}" role="button" class="btn" data-toggle="modal">Excluir</a>
-					<div id="modal-container-{{foto.id}}" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-header">
-							 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<h3 id="myModalLabel">
-								Exclusão
-							</h3>
-						</div>
-						<div class="modal-body">
-							<p>
-								Deseja excluir #{{foto.id}}?
-							</p>
-						</div>
-						<div class="modal-footer">
-							 <button class="btn" data-dismiss="modal" aria-hidden="true">Não Excluir</button> 
-							 <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" ng-click="excluir(foto)">Excluir</button>
-						</div>
-					</div>
-				</td>	
-				
-			</tr>					
-		</tbody>
-	</table>
+	
+	<div class="span2" ng-repeat="foto in fotos">
+		<div>							
+			<img ng-src="{{foto.link}}" style="width: 400px">
+		
+			<a class="btn btn-info" href="#/foto/{{foto.id}}">Editar</a>											
+			<a class="btn btn-danger" id="modal-{{foto.id}}" href="#modal-container-{{foto.id}}" role="button" class="btn" data-toggle="modal">Excluir</a>
+			<div id="modal-container-{{foto.id}}" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">
+						Exclusão
+					</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						Deseja excluir #{{foto.id}}?
+					</p>
+				</div>
+				<div class="modal-footer">
+					 <button class="btn" data-dismiss="modal" aria-hidden="true">Não Excluir</button> 
+					 <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" ng-click="excluir(foto)">Excluir</button>
+				</div>
+			</div>
+		</div>	
+		
+	</tr>						
 </div>
