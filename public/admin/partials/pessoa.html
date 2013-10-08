@@ -13,7 +13,7 @@
 	</div>
 </div>
 <div class="span10">
-	<form class="form-horizontal">
+	<form class="form-horizontal" name="pessoaFrm">
 		<fieldset>
 			 <div class="page-header">
 				<h1>					
@@ -24,24 +24,24 @@
 			<div class="control-group">
 				 <label class="control-label" for="inputNome">Nome</label>
 				<div class="controls">
-					<input type="text" id="inputNome" ng-model="pessoa.nome"/>
+					<input type="text" id="inputNome" ng-model="pessoa.nome" required/>
 				</div>
 			</div>
 			<div class="control-group">
 				 <label class="control-label" for="inputEmail">Email</label>
 				<div class="controls">
-					<input type="text" id="inputEmail" ng-model="pessoa.email"/>
+					<input type="text" id="inputEmail" ng-model="pessoa.email" required>
 				</div>
 			</div>
 			<div class="control-group">
 				 <label class="control-label" for="inputTelefone">Telefone</label>
 				<div class="controls">
-					<input type="text" id="inputTelefone" ng-model="pessoa.telefone"/>
+					<input type="text" id="inputTelefone" ng-model="pessoa.telefone" required/>
 				</div>
 			</div>	
 			<div class="control-group">
 				<div class="controls">
-					 <button class="btn btn-success" ng-click="save(pessoa)">Ok</button>
+					 <button class="btn btn-success" ng-disabled="pessoaFrm.$invalid" ng-click="save(pessoa)">Ok</button>
 				</div>
 			</div>
 		</fieldset>

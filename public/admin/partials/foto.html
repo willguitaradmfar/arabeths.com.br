@@ -13,7 +13,7 @@
 	</div>
 </div>
 <div class="span10">
-	<form class="form-horizontal">
+	<form class="form-horizontal" name="fotoFrm">
 		<fieldset>
 			 <div class="page-header">
 				<h1>					
@@ -24,13 +24,13 @@
 			<div class="control-group">
 				 <label class="control-label" for="inputNome">Nome</label>
 				<div class="controls">
-					<input type="text" id="inputNome" ng-model="foto.nome"/>
+					<input type="text" id="inputNome" ng-model="foto.nome" required/>
 				</div>
 			</div>
 			<div class="control-group">
 				 <label class="control-label" for="inputLink">Link</label>
 				<div class="controls">
-					<input type="text" id="inputLink" ng-model="foto.link"/>
+					<input type="text" id="inputLink" ng-model="foto.link" required/>
 				</div>
 			</div>
 			<div class="control-group">
@@ -41,7 +41,7 @@
 			</div>	
 			<div class="control-group">
 				<div class="controls">				 
-					 <button class="btn btn-success" ng-click="save(foto)">Ok</button>		 
+					 <button class="btn btn-success" ng-disabled="fotoFrm.$invalid" ng-click="save(foto)">Ok</button>		 
 				</div>
 			</div>
 		</fieldset>
